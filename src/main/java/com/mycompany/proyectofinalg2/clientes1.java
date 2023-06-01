@@ -1,14 +1,9 @@
-package main.java.com.mycompany.proyectofinalg2;
+package com.mycompany.proyectofinalg2;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.*;
 
 public class clientes1{
-    private static final boolean False = false;
-    public void Clientes1(Clientes clientes){
+     public static void escribir(clientes clientes){
         try{
             File f = new File("clientes.txt");
             FileWriter fw;
@@ -17,11 +12,11 @@ public class clientes1{
                 fw = new FileWriter(f, true);
                 bw = new BufferedWriter(fw);
                 bw.newLine();
-                bw.write(clientes.GetName()+"%"+clientes.GetApe+"%"+clientes.GetCui+"%"+clientes.GetNumtel);                
+                bw.write(clientes.GetName()+"%"+clientes.GetApe()+"%"+clientes.GetCui()+"%"+clientes.GetNum());                
             } else {
                 fw = new FileWriter(f);
                 bw = new BufferedWriter(fw);
-                bw.write(clientes.GetName()+"%"+clientes.GetApe+"%"+clientes.GetCui+"%"+clientes.GetNumtel);                               
+                bw.write(clientes.GetName()+"%"+clientes.GetApe()+"%"+clientes.GetCui()+"%"+clientes.GetNum());                               
             }
             bw.close();
             fw.close();
@@ -30,17 +25,23 @@ public class clientes1{
         }
     }
     public void mostrar(){
-        File f = new File("clientes.txt");
-        if (f.exists()){
-            FileReader fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
-            String linea;
-            while((linea=br.readLine())!=null){
-                String[] arreglo = linea.split("%");
-                clientes clientes = new clientes(arreglo[0], arreglo[1], arreglo[2], arreglo[3], arreglo[4], arreglo[5], arreglo[6], arreglo[7], arreglo[8], arreglo[9]);
-                System.out.println(clientes.toString());
+        try{
+            File f = new File("clientes.txt");
+            if (f.exists()){
+                FileReader fr = new FileReader(f);
+                BufferedReader br = new BufferedReader(fr);
+                String linea;
+                while((linea=br.readLine())!=null){
+                    String[] arreglo = linea.split("%");
+                    clientes clientes = new clientes(1, 1, "direccion", "trabajo", 1, "name", "ape", 3, 4);
+                    //clientes clientes = new clientes(Integer.parseInt(arreglo[0]), Integer.parseInt(arreglo[1]), arreglo[2], arreglo[3], Integer.parseInt(arreglo[4]), arreglo[5], arreglo[6], Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]));
+                    System.out.println(clientes.toString());
+                }
             }
+        }catch(Exception e){
+            System.out.println("Error de E/S" + e);
         }
+        
     }
     public void buscar(String nombreBuscar){
         try{
@@ -49,7 +50,7 @@ public class clientes1{
                 FileReader fr = new FileReader(f);
                 BufferedReader br = new BufferedReader(fr);
                 String linea;
-                boolean blnEncontrado=False;
+                boolean blnEncontrado = false;
                 while ((linea=br.readLine())!=null){
                     String [] arreglo = linea.split("%");
                     if (arreglo[0].equalsIgnoreCase(nombreBuscar)){

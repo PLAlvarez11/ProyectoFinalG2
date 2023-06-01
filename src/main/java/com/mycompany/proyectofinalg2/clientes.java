@@ -1,16 +1,17 @@
-package main.java.com.mycompany.proyectofinalg2;
+package com.mycompany.proyectofinalg2;
 
 public class clientes{
     private int cui;
     private int nit;
     private String direccion;
     private String trabajo;
-    private int fech;
+    private String fech;
     private String name;
     private String ape;
     private int numtel;
     private int estado;
-    public void cliente(int cui, int nit, String direccion, String trabajo, int fech, String name, String ape, int numtel, int estado){
+    
+    public void clientes(int cui, int nit, String direccion, String trabajo, String fech, String name, String ape, int numtel, int estado){
         this.cui=cui;
         this.nit=nit;
         this.direccion=direccion;
@@ -45,10 +46,10 @@ public class clientes{
     public String GetTrabajo(){
         return this.trabajo;
     }
-    public void SetFech(int fech){
+    public void SetFech(String fech){
         this.fech=fech;
     }
-    public int GetFech(){
+    public String GetFech(){
         return this.fech;
     }
     public void SetName(String name){
