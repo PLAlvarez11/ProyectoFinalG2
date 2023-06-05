@@ -1,9 +1,13 @@
 package com.mycompany.proyectofinalg2;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 
-public class clientes1{
-     public static void escribir(clientes clientes){
+public class clienteArchivo {
+    public static void escribir(clientes clientes){
         try{
             File f = new File("clientes.txt");
             FileWriter fw;
@@ -33,8 +37,7 @@ public class clientes1{
                 String linea;
                 while((linea=br.readLine())!=null){
                     String[] arreglo = linea.split("%");
-                    clientes clientes = new clientes(1, 1, "direccion", "trabajo", 1, "name", "ape", 3, 4);
-                    //clientes clientes = new clientes(Integer.parseInt(arreglo[0]), Integer.parseInt(arreglo[1]), arreglo[2], arreglo[3], Integer.parseInt(arreglo[4]), arreglo[5], arreglo[6], Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]));
+                    clientes clientes = new clientes(Integer.parseInt(arreglo[0]), Integer.parseInt(arreglo[1]), arreglo[2], arreglo[3], Integer.parseInt(arreglo[4]), arreglo[5], arreglo[6], Integer.parseInt(arreglo[7]), Integer.parseInt(arreglo[8]));
                     System.out.println(clientes.toString());
                 }
             }

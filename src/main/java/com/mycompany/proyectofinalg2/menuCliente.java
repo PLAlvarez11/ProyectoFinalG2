@@ -1,9 +1,9 @@
 package com.mycompany.proyectofinalg2;
 
 import java.util.Scanner;
-import java.io.*;
-public class clientes2{
-    public static void agregarCliente (){
+
+public class menuCliente {
+     public static void agregarCliente (){
     String fech1;
     String fech2;
     String fech3;
@@ -91,6 +91,6 @@ public class clientes2{
     }
     
         clientes cli = new clientes(cui, nit, direccion, trabajo, fech, name, ape, numtel, 1);
-        clientes1.escribir(cli);
+        clienteArchivo.escribir(cli);
     }
 }
