@@ -10,8 +10,8 @@ public class clientes{
     private String ape;
     private int numtel;
     private int estado;
-    
-    public void clientes(int cui, int nit, String direccion, String trabajo, String fech, String name, String ape, int numtel, int estado){
+
+    public void cliente(int cui, int nit, String direccion, String trabajo, String fech, String name, String ape, int numtel, int estado){
         this.cui=cui;
         this.nit=nit;
         this.direccion=direccion;
