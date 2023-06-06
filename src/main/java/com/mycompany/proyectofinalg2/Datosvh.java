@@ -8,7 +8,7 @@ public class Datosvh {
     private String Modelovh;
     private String Colorvh;
     private int Nitcliente;
-    private int Estadoreg;
+    private int  Estadoreg;
 
     public Datosvh() {
          Numplaca=  " ";
@@ -17,10 +17,9 @@ public class Datosvh {
          Modelovh= " "; 
          Colorvh= " "; 
          Nitcliente= 0;
-         Estadoreg= 0; 
+         Estadoreg=1; 
     }
-         
-         public Datosvh( String Numplaca , String Marcavh , String Lineavh , String Modelovh , String Colorvh, int Nitcliente){
+         public Datosvh( String Numplaca, String Marcavh, String Lineavh, String Modelovh, String Colorvh, int Nitcliente){
             this.Numplaca=Numplaca;
             this.Marcavh= Marcavh;
             this.Lineavh= Lineavh;
@@ -45,7 +44,6 @@ public class Datosvh {
          public String getColorvh(){
              return Colorvh;
          }
-         
          public int getNitcliente(){
              return Nitcliente;
          }
@@ -76,7 +74,7 @@ public class Datosvh {
          }
              @Override
          public String toString () {
-                     return "Vehiculo {"+ "con numero de placa"+ Numplaca +" , Marca del vehiculo "+ Marcavh + ",  Linea "+ Lineavh+ ", con Modelo " + Modelovh + ", del color "+ Colorvh + "y es del cliente con Nit " + Nitcliente + "}" ;                               
+                     return "Vehiculo { con numero de placa"+ Numplaca +" , Marca del vehiculo "+ Marcavh + ",  Linea "+ Lineavh+ ", con Modelo " + Modelovh + ", del color "+ Colorvh + "y es del cliente con Nit " + Integer.toString(Nitcliente )+ "Estadoreg = " + Integer.toString(Estadoreg) + "]";                               
          }
             
          }
