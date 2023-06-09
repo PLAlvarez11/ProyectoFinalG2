@@ -2,7 +2,7 @@ package com.mycompany.proyectofinalg2;
 import java.util.Scanner;
 
 public class Menuvh {
-
+    
    public static void AgregarVehiculo() {
          Scanner entrada = new Scanner(System.in);
          
